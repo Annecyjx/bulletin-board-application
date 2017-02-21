@@ -1,0 +1,44 @@
+doctype html
+html
+	head
+		link(type='text/css', rel='stylesheet', href='css/materialize.min.css', media='screen,projection')
+		style.
+			h1{
+				text-indent: 20px;
+				text-align: left;
+				font-family: 'Lucida Console';
+				font-style: oblique;
+				font-size: 30px;
+				color: #cc99ff;
+			}
+			label{
+				font-size: 20px;
+				padding:6px 20px;
+				color:#556B2F;
+			}
+			input[type=text] {
+				font-size:16px;
+				padding:6px 20px;
+				color:#556B2F;				
+			}
+
+	body
+		nav
+			.nav-wrapper.teal.lighten-2
+				a.brand-logo.center(href='#!') Bulletin Board
+				ul.left.hide-on-med-and-down
+					li
+						a(href='/home') Post!
+					li
+						a(href='/history') History
+		h1 It's nothing but Share
+
+		.row
+			form(method='POST' action='/home')
+				div.form-group
+					label(for='Subject',class='active') Subject:
+					input(type='text', name='subject', placeholder='typing...', id='myInputSubject')
+				div.form-group
+					label(for='Message',class='active') Message:
+					input(type='text', name='message', placeholder='typing...', id='myInputMessage')
+				button.btn.btn-primary(type='submit') Send message
